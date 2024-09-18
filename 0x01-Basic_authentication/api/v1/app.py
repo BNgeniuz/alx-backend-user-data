@@ -39,7 +39,7 @@ def before_request_func():
 @app.errorhandler(401)
 def unauthorized(error) -> tuple[str, Literal[401]]:
     """doc doc Unauthorized handler"""
-    return jsonify({"error": "Unauthorized"}), 401
+    return jsonify({"error": "unauthorized"}), 401
 
 
 @app.errorhandler(403)
