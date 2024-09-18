@@ -7,7 +7,6 @@ from api.v1.views import app_views
 from flask import Flask, jsonify, abort, request
 from flask_cors import (CORS, cross_origin)
 import os
-from typing import Literal
 from api.v1.auth.auth import Auth
 from api.v1.auth.basic_auth import BasicAuth
 
@@ -37,7 +36,7 @@ def before_request_func():
         abort(403)
 
 @app.errorhandler(401)
-def unauthorized(error) -> tuple[str, Literal[401]]:
+def unauthorized(error) -> str:
     """doc doc Unauthorized handler"""
     return jsonify({"error": "unauthorized"}), 401
 
@@ -45,7 +44,7 @@ def unauthorized(error) -> tuple[str, Literal[401]]:
 @app.errorhandler(403)
 def forbidden(error):
     """Error handler for 403 Forbidden"""
-    return jsonify({"error": "Forbidden"}), 403
+    return jsonify({"error": "forbidden"}), 403
 
 
 
