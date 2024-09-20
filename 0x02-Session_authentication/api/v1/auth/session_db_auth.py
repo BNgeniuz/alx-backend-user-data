@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Session authentication with expiration
-and storage support module for the API.
+"""storage support module for the API.
 """
 from flask import request
 from datetime import datetime, timedelta
